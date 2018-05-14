@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
     using Olive;
     using Olive.Entities;
+    using Olive.Entities.Data;
 
     /// <summary>
     /// Provides the business logic for Settings class.

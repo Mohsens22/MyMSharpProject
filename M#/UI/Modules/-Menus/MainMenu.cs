@@ -18,6 +18,10 @@ namespace Modules
                 .VisibleIf(AppRole.Admin)
                 .Icon(FA.Cog)
                .OnClick(x => x.Go<Admin.SettingsPage>());
+            Item("Apartments")
+                .VisibleIf(AppRole.Admin)
+                .Icon(FA.Cog)
+               .OnClick(x => x.Go<ApartmentPage>());
         }
     }
 }
