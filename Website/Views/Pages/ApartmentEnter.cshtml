@@ -1,0 +1,38 @@
+﻿@model ViewModel.ApartmentForm
+<!-- «Start| ApartmentForm» -->
+<form data-module="ApartmentForm" role="form" method="post" action="@Url.Current()" data-validation-style="tooltip" class="input-form">
+   @Html.AntiForgeryToken()
+   @Html.StartupActionsJson()
+   <h2>Apartment details</h2>
+   <div class="form-body">
+      <div class="form-group row required-item">
+         <label for="Name" class="control-label">
+            Name
+         </label>
+         <div class="group-control">
+            <input type="text" asp-for="Name" class="form-control" autofocus="autofocus" />
+         </div>
+      </div>
+      <div class="form-group row">
+         <label for="BuildTime" class="control-label">
+            BuildTime
+         </label>
+         <div class="group-control">
+            <div class="input-group">
+               <input type="text" asp-for="BuildTime" class="form-control" data-control="date-picker|time-picker" />
+               <span class="input-group-addon">
+                  <i class="fa-calendar fa"></i>
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="buttons-row">
+      <div class="buttons">
+         <button name="Cancel" class="btn btn-secondary" onclick="return page.goBack(this);" data-redirect="ajax">Cancel</button>
+         <button type="submit" name="Save" class="btn btn-primary" formaction='@Url.ActionWithQuery("ApartmentForm/Save")' default-button="true"><i class="fa-check fa"></i>
+            Save</button>
+      </div>
+   </div>
+</form>
+<!-- «End| ApartmentForm» -->

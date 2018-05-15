@@ -143,28 +143,7 @@ Website/wwwroot/lib/
 Website/node_modules/
 
 # these are all generated
-Website/Views/Pages/
-Website/Views/Modules/
-Website/Controllers/Pages/
-Website/Controllers/Modules/
 
-Website/public/css/*
-!Website/public/css/readme.txt
-Website/public/fonts/*
-!Website/public/fonts/readme.txt
-Website/public/js/*
-!Website/public/js/readme.txt
-
-Website/Styles/**/*.css
-Website/Styles/**/*.map
-
-Website/Scripts/*.js
-Website/Scripts/*.map
-!Website/Scripts/ckeditor_config.js
-
-Website/Scripts/Lib/MSharp/*.js 
-Website/Scripts/Lib/MSharp/*.js.map 
-!Website/Scripts/Lib/MSharp/jquery-validate.bootstrap-tooltip.js
 
 
 /packages/

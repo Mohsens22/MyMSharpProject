@@ -1,0 +1,48 @@
+﻿@model ViewModel.ApartmentList
+<!-- «Start| ApartmentList» -->
+<form data-module="ApartmentList" method="get" action="@Url.Current()" data-redirect="ajax">
+   @Html.AntiForgeryToken()
+   @Html.StartupActionsJson()
+   <div class="buttons-row top-buttons-row">
+      <div class="buttons">
+         <a name="NewAssetTypes" class="btn btn-primary" href='@Url.Index("ApartmentEnter", new { ReturnUrl = Url.Current() })' data-redirect="ajax" default-button="true"><i class="fa-plus fa"></i>
+            New Asset Types</a>
+      </div>
+   </div>
+   <h2>Asset Typeses</h2>
+   @if (Model.Items.Any())
+   {
+   <div class="grid-wrapper">
+      <table class="grid">
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>BuildTime</th>
+               <th></th>
+            </tr>
+         </thead>
+         <tbody>
+            @foreach (var listItem in Model.Items)
+            {
+            var item = listItem.Item;
+            <tr>
+               <td>@item.Name</td>
+               <td>@(string.Format("{0:yyyy-MM-dd @ hh:mm tt}", item.BuildTime))</td>
+               <td><a name="Edit" class="btn btn-secondary" href='@Url.Index("ApartmentEnter", new { item = item.ID, ReturnUrl = Url.Current() })' data-redirect="ajax"><i class="fa-edit fa"></i>
+                     Edit</a>
+                  <button type="submit" name="Delete" class="btn btn-secondary" formaction='@Url.ActionWithQuery("ApartmentList/Delete", item)'><i class="fa-remove fa"></i>
+                     Delete</button></td>
+            </tr>
+            }
+         </tbody>
+      </table>
+   </div>
+   }
+   @if (Model.Items.None())
+   {
+   <div class="empty-list">
+      There are no apartments to display.
+   </div>
+   }
+</form>
+<!-- «End| ApartmentList» -->
